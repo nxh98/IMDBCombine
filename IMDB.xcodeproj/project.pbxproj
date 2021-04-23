@@ -15,6 +15,14 @@
 		F3D7930A263113D00046A7AC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D79308263113D00046A7AC /* HomeViewController.xib */; };
 		F3D79310263122F20046A7AC /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D7930E263122F20046A7AC /* FilmCell.swift */; };
 		F3D79311263122F20046A7AC /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D7930F263122F20046A7AC /* FilmCell.xib */; };
+		F3D793182632B2E30046A7AC /* FilmCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D793172632B2E30046A7AC /* FilmCellViewModel.swift */; };
+		F3D7931C2632B5110046A7AC /* ImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D7931B2632B5110046A7AC /* ImageViewExt.swift */; };
+		F3D7931F2632B5D40046A7AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D7931E2632B5D40046A7AC /* HomeViewModel.swift */; };
+		F3D793232632B6810046A7AC /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D793222632B6810046A7AC /* Film.swift */; };
+		F3D793282632BC3D0046A7AC /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D793272632BC3D0046A7AC /* ApiManager.swift */; };
+		F3D7932C2632C02B0046A7AC /* SearchFilmsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D7932B2632C02B0046A7AC /* SearchFilmsRequest.swift */; };
+		F3D7932F2632C04D0046A7AC /* DetailFilmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D7932E2632C04D0046A7AC /* DetailFilmRequest.swift */; };
+		F3D793342632C08C0046A7AC /* SearchFilmsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D793332632C08C0046A7AC /* SearchFilmsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		F3D79308263113D00046A7AC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F3D7930E263122F20046A7AC /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		F3D7930F263122F20046A7AC /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
+		F3D793172632B2E30046A7AC /* FilmCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellViewModel.swift; sourceTree = "<group>"; };
+		F3D7931B2632B5110046A7AC /* ImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExt.swift; sourceTree = "<group>"; };
+		F3D7931E2632B5D40046A7AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F3D793222632B6810046A7AC /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		F3D793272632BC3D0046A7AC /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		F3D7932B2632C02B0046A7AC /* SearchFilmsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilmsRequest.swift; sourceTree = "<group>"; };
+		F3D7932E2632C04D0046A7AC /* DetailFilmRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilmRequest.swift; sourceTree = "<group>"; };
+		F3D793332632C08C0046A7AC /* SearchFilmsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilmsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,9 @@
 		F3D792ED262ECE000046A7AC /* IMDB */ = {
 			isa = PBXGroup;
 			children = (
+				F3D793262632BC200046A7AC /* API */,
+				F3D793212632B6610046A7AC /* Model */,
+				F3D7931A2632B4F50046A7AC /* Extension */,
 				F3D79306263113B60046A7AC /* HomeViewController */,
 				F3D792EE262ECE000046A7AC /* AppDelegate.swift */,
 				F3D792F0262ECE000046A7AC /* SceneDelegate.swift */,
@@ -76,6 +95,7 @@
 				F3D7930D263122B60046A7AC /* ListFilmsCell */,
 				F3D79307263113D00046A7AC /* HomeViewController.swift */,
 				F3D79308263113D00046A7AC /* HomeViewController.xib */,
+				F3D7931E2632B5D40046A7AC /* HomeViewModel.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -85,8 +105,52 @@
 			children = (
 				F3D7930E263122F20046A7AC /* FilmCell.swift */,
 				F3D7930F263122F20046A7AC /* FilmCell.xib */,
+				F3D793172632B2E30046A7AC /* FilmCellViewModel.swift */,
 			);
 			path = ListFilmsCell;
+			sourceTree = "<group>";
+		};
+		F3D7931A2632B4F50046A7AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F3D7931B2632B5110046A7AC /* ImageViewExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F3D793212632B6610046A7AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3D793222632B6810046A7AC /* Film.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3D793262632BC200046A7AC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F3D793322632C06E0046A7AC /* Response */,
+				F3D793312632C0580046A7AC /* Request */,
+				F3D793272632BC3D0046A7AC /* ApiManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F3D793312632C0580046A7AC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F3D7932B2632C02B0046A7AC /* SearchFilmsRequest.swift */,
+				F3D7932E2632C04D0046A7AC /* DetailFilmRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F3D793322632C06E0046A7AC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				F3D793332632C08C0046A7AC /* SearchFilmsResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +224,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D7931C2632B5110046A7AC /* ImageViewExt.swift in Sources */,
+				F3D793282632BC3D0046A7AC /* ApiManager.swift in Sources */,
+				F3D793182632B2E30046A7AC /* FilmCellViewModel.swift in Sources */,
+				F3D7931F2632B5D40046A7AC /* HomeViewModel.swift in Sources */,
 				F3D792EF262ECE000046A7AC /* AppDelegate.swift in Sources */,
+				F3D7932F2632C04D0046A7AC /* DetailFilmRequest.swift in Sources */,
+				F3D7932C2632C02B0046A7AC /* SearchFilmsRequest.swift in Sources */,
 				F3D79310263122F20046A7AC /* FilmCell.swift in Sources */,
+				F3D793342632C08C0046A7AC /* SearchFilmsResponse.swift in Sources */,
+				F3D793232632B6810046A7AC /* Film.swift in Sources */,
 				F3D792F1262ECE000046A7AC /* SceneDelegate.swift in Sources */,
 				F3D79309263113D00046A7AC /* HomeViewController.swift in Sources */,
 			);
