@@ -25,7 +25,10 @@ class FilmCell: UITableViewCell {
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.film.name
 
-        guard let url = URL(string: viewModel.film.imageLink) else { return }
+        guard let link = viewModel.film.imageLink else {
+            return
+        }
+        guard let url = URL(string: link) else { return }
         bannerImage.load(url: url)
     }
 

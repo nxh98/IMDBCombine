@@ -35,6 +35,7 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Functions
     private func ConfigUI() {
+        configTableView()
     }
 
     private func configTableView() {
@@ -50,7 +51,16 @@ final class HomeViewController: UIViewController {
     }
 
     @IBAction private func search(_ sender: UIButton) {
-        print(searchFilmsTextField.text)
+        viewModel.searchFilms(text: searchFilmsTextField.text ?? "") { result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    self.filmsTableView.reloadData()
+                }
+            case .failure:
+                break
+            }
+        }
     }
 }
 

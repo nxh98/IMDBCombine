@@ -9,5 +9,5 @@ import Foundation
 
 struct Film {
     let name: String
-    let imageLink: String
+    let imageLink: String?
 }

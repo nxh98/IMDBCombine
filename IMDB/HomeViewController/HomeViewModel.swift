@@ -22,7 +22,15 @@ final class HomeViewModel {
         return FilmCellViewModel(film: films[indexPath.row])
     }
 
-    func searchFilms(text: String) {
-        
+    func searchFilms(text: String, completion: @escaping APICompletion) {
+        ApiManager.SearchFilmsResponse.getFilms(name: text) { result in
+            switch result {
+            case .success(let response):
+                self.films = response
+                completion(.success)
+            case .failure:
+                break
+            }
+        }
     }
 }
