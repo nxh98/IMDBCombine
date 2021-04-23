@@ -7,23 +7,33 @@
 
 import UIKit
 
-class FilmCell: UITableViewCell {
+final class FilmCell: UITableViewCell {
 
-    @IBOutlet private weak var bannerImage: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    // MARK: - @IBOutlets
+    @IBOutlet  weak var bannerImage: UIImageView!
+    @IBOutlet  weak var titleLabel: UILabel!
 
+    // MARK: - Properties
     var viewModel: FilmCellViewModel? {
         didSet {
             updateView()
         }
     }
+
+    // MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bannerImage.image = UIImage(systemName: "livephoto")
+    }
+
+    // MARK: - Functions
     private func updateView() {
         guard let viewModel = viewModel else { return }
-        titleLabel.text = viewModel.film.name
+        titleLabel.text = "Phim: " + viewModel.film.name
 
         guard let link = viewModel.film.imageLink else {
             return
@@ -31,11 +41,4 @@ class FilmCell: UITableViewCell {
         guard let url = URL(string: link) else { return }
         bannerImage.load(url: url)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

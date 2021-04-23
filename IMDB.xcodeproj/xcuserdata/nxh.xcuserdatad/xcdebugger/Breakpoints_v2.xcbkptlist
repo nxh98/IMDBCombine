@@ -7,8 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A3FF98ED-27E7-4B9C-94B1-B48557312161"
-            shouldBeEnabled = "Yes"
+            uuid = "18DD3851-AE49-4A93-BAAA-66F281CA84D4"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IMDB/API/Response/SearchFilmsResponse.swift"
@@ -23,79 +23,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "794DDD0E-7728-4D9F-8EEE-727A683C1937"
-            shouldBeEnabled = "Yes"
+            uuid = "076D8A84-FAD1-46A0-9BAB-378323408982"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IMDB/HomeViewController/HomeViewModel.swift"
+            filePath = "IMDB/API/Response/SearchFilmsResponse.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "searchFilms(text:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E8516A81-80A2-41B3-B93F-1FD80BC9100E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IMDB/HomeViewController/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF79BDD3-FECC-4C49-8123-8FEA938C977A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IMDB/HomeViewController/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "search(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getFilms(name:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FF79BDD3-FECC-4C49-8123-8FEA938C977A - 36b191c1af76f335"
+                  uuid = "076D8A84-FAD1-46A0-9BAB-378323408982 - d50c9835db26d8cd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (IMDB.APIResponse) -&gt; () in IMDB.HomeViewController.(search in _E971ACF5C8B7C47A8FA77814F1364743)(__C.UIButton) -&gt; ()"
+                  symbolName = "static IMDB.ApiManager.SearchFilmsResponse.getFilms(name: Swift.String, completion: (IMDB.APISearchResponse) -&gt; ()) -&gt; ()"
                   moduleName = "IMDB"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nxh/IMDBCombine/IMDB/HomeViewController/HomeViewController.swift"
+                  urlString = "file:///Users/nxh/IMDBCombine/IMDB/API/Response/SearchFilmsResponse.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "192">
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1196">
                </Location>
                <Location
-                  uuid = "FF79BDD3-FECC-4C49-8123-8FEA938C977A - 2dcc4f87d1679b1e"
+                  uuid = "076D8A84-FAD1-46A0-9BAB-378323408982 - 7dd6cb2a116a4691"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (IMDB.APIResponse) -&gt; () in IMDB.HomeViewController.(search in _E971ACF5C8B7C47A8FA77814F1364743)(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static IMDB.ApiManager.SearchFilmsResponse.getFilms(name: Swift.String, completion: (IMDB.APISearchResponse) -&gt; ()) -&gt; ()"
                   moduleName = "IMDB"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nxh/IMDBCombine/IMDB/HomeViewController/HomeViewController.swift"
+                  urlString = "file:///Users/nxh/IMDBCombine/IMDB/API/Response/SearchFilmsResponse.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "50">
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "271">
                </Location>
             </Locations>
          </BreakpointContent>
