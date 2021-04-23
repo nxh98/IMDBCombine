@@ -24,11 +24,6 @@ final class HomeViewController: UIViewController {
         handleReload()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        configAninimate()
-    }
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchFilmsTextField.endEditing(true)
     }
@@ -39,7 +34,7 @@ final class HomeViewController: UIViewController {
     }
 
     private func handleReload() {
-        viewModel.reloadPublisher.sink { (_) in
+        viewModel.reloadPublisher.sink { _ in
             DispatchQueue.main.async {
                 self.filmsTableView.reloadData()
             }
@@ -51,12 +46,6 @@ final class HomeViewController: UIViewController {
         filmsTableView.delegate = self
         let nib = UINib(nibName: "FilmCell", bundle: .main)
         filmsTableView.register(nib, forCellReuseIdentifier: "FilmCell")
-    }
-
-    private func configAninimate() {
-        UIView.animateKeyframes(withDuration: 10, delay: 0.5, options: .repeat) {
-            self.searchBannerLabel.frame.origin.x = self.view.bounds.width
-        }
     }
 
     @IBAction private func search(_ sender: UITextField) {

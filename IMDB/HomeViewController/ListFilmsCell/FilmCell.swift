@@ -25,10 +25,15 @@ final class FilmCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bannerImage.image = UIImage(systemName: "livephoto")
+    }
+
     // MARK: - Functions
     private func updateView() {
         guard let viewModel = viewModel else { return }
-        titleLabel.text = viewModel.film.name
+        titleLabel.text = "Phim: " + viewModel.film.name
 
         guard let link = viewModel.film.imageLink else {
             return
