@@ -49,9 +49,10 @@
                     <color key="textColor" systemColor="systemYellowColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B48-GC-x1I">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B48-GC-x1I">
                     <rect key="frame" x="5" y="443" width="404" height="409"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -69,7 +70,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R6N-TN-Wlx" secondAttribute="bottom" id="alT-n9-0ud"/>
                 <constraint firstItem="B48-GC-x1I" firstAttribute="top" secondItem="9ar-qN-aKF" secondAttribute="bottom" constant="20" id="b3v-dV-4Ha"/>
                 <constraint firstItem="R6N-TN-Wlx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dmR-Zz-ZG7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B48-GC-x1I" secondAttribute="bottom" constant="10" id="eqL-yD-tcm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B48-GC-x1I" secondAttribute="bottom" priority="750" constant="10" id="eqL-yD-tcm"/>
                 <constraint firstItem="9ar-qN-aKF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="f5I-Jp-7Zz"/>
                 <constraint firstItem="R6N-TN-Wlx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="npz-uw-jK2"/>
             </constraints>

@@ -20,9 +20,9 @@ final class HomeViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        ConfigUI()
+        configUI()
+        handleReload()
     }
-
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,14 +34,23 @@ final class HomeViewController: UIViewController {
     }
 
     // MARK: - Functions
-    private func ConfigUI() {
+    private func configUI() {
         configTableView()
+    }
+
+    private func handleReload() {
+        viewModel.reloadPublisher.sink { (_) in
+            DispatchQueue.main.async {
+                self.filmsTableView.reloadData()
+            }
+        }.store(in: &viewModel.subcriptions)
     }
 
     private func configTableView() {
         filmsTableView.dataSource = self
         filmsTableView.delegate = self
-        filmsTableView.register(FilmCell.self, forCellReuseIdentifier: "FilmCell")
+        let nib = UINib(nibName: "FilmCell", bundle: .main)
+        filmsTableView.register(nib, forCellReuseIdentifier: "FilmCell")
     }
 
     private func configAninimate() {
@@ -50,17 +59,8 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    @IBAction private func search(_ sender: UIButton) {
-        viewModel.searchFilms(text: searchFilmsTextField.text ?? "") { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    self.filmsTableView.reloadData()
-                }
-            case .failure:
-                break
-            }
-        }
+    @IBAction private func search(_ sender: UITextField) {
+        viewModel.searchPublisher.send(sender.text ?? "")
     }
 }
 
@@ -78,5 +78,9 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath) as? FilmCell else { return UITableViewCell()}
         cell.viewModel =  viewModel.cellForRow(indexPath: indexPath)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
