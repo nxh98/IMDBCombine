@@ -20,6 +20,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        ConfigUI()
     }
 
 
@@ -28,7 +29,13 @@ final class HomeViewController: UIViewController {
         configAninimate()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchFilmsTextField.endEditing(true)
+    }
+
     // MARK: - Functions
+    private func ConfigUI() {
+    }
 
     private func configTableView() {
         filmsTableView.dataSource = self
@@ -40,6 +47,10 @@ final class HomeViewController: UIViewController {
         UIView.animateKeyframes(withDuration: 10, delay: 0.5, options: .repeat) {
             self.searchBannerLabel.frame.origin.x = self.view.bounds.width
         }
+    }
+
+    @IBAction private func search(_ sender: UIButton) {
+        print(searchFilmsTextField.text)
     }
 }
 
@@ -59,4 +70,3 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
-
