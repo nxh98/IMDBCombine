@@ -9,9 +9,27 @@ import UIKit
 
 class FilmCell: UITableViewCell {
 
+    @IBOutlet private weak var bannerImage: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+
+    var viewModel: FilmCellViewModel? {
+        didSet {
+            updateView()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+
+    private func updateView() {
+        guard let viewModel = viewModel else { return }
+        titleLabel.text = viewModel.film.name
+
+        guard let link = viewModel.film.imageLink else {
+            return
+        }
+        guard let url = URL(string: link) else { return }
+        bannerImage.load(url: url)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
