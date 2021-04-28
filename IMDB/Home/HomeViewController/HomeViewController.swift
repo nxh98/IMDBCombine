@@ -24,6 +24,10 @@ final class HomeViewController: UIViewController {
         handleReload()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchFilmsTextField.endEditing(true)
     }
@@ -31,6 +35,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Functions
     private func configUI() {
         configTableView()
+        
     }
 
     private func handleReload() {
@@ -50,12 +55,23 @@ final class HomeViewController: UIViewController {
 
     @IBAction private func search(_ sender: UITextField) {
         viewModel.searchPublisher.send(sender.text ?? "")
-    }
+    }	
 }
 
 // MARK: - extension
 extension HomeViewController: UITableViewDelegate {
-    #warning("handle later")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = FilmDetailsViewController()
+        vc.viewModel.getDetailFilm(id: viewModel.films[indexPath.row].id) { [weak self] res in
+            guard let this = self else { return }
+            switch res {
+            case .success:
+                this.navigationController?.pushViewController(vc, animated: true)
+            case .failure:
+                break
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

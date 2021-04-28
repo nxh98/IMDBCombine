@@ -8,6 +8,7 @@
 import Foundation
 
 struct Film {
+    let id: String
     let name: String
     let imageLink: String?
 }

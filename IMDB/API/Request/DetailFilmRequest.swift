@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+extension ApiManager.DetailFilm {
+    static var path: String { return ApiManager.shared.domain + "film/%@" }
+}
