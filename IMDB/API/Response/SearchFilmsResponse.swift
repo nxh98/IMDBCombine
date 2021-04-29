@@ -29,7 +29,8 @@ extension ApiManager.SearchFilmsResponse {
                                 for value in titles {
                                     let name = value["title"]
                                     let image = value["image"]
-                                    let film = Film(name: name ?? "", imageLink: image)
+                                    let id = value["id"]
+                                    let film = Film(id: id ?? "", name: name ?? "", imageLink: image)
                                     films.append(film)
                                 }
                                 completion(.success(films))

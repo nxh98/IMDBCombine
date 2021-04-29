@@ -9,10 +9,16 @@ import Foundation
 
 typealias APISearchCompletion = (APISearchResponse) -> ()
 typealias APICompletion = (APIResponse) -> ()
+typealias APIDetailsFilmCompletion = (APIDetailsFilm) -> ()
 
 
 enum APISearchResponse {
     case success([Film])
+    case failure
+}
+
+enum APIDetailsFilm {
+    case success(FilmDetails)
     case failure
 }
 

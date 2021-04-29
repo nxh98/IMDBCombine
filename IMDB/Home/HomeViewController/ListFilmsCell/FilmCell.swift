@@ -33,7 +33,7 @@ final class FilmCell: UITableViewCell {
     // MARK: - Functions
     private func updateView() {
         guard let viewModel = viewModel else { return }
-        titleLabel.text = "Phim: " + viewModel.film.name
+        titleLabel.text = "Film: " + viewModel.film.name
 
         guard let link = viewModel.film.imageLink else {
             return
